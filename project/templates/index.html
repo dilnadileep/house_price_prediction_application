@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="left-column">
+            <h1>Predict House Prices</h1>
+            <p>
+                Fill in the details below to get an estimated price for houses in your area. Our model uses various factors to provide accurate predictions.
+            </p>
+        </div>
+        <div class="right-column">
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="income">Avg. Area Income</label>
+                    <input type="text" id="income" name="income" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Avg. Area House Age</label>
+                    <input type="text" id="age" name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rooms">Avg. Area Number of Rooms</label>
+                    <input type="text" id="rooms" name="rooms" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bedrooms">Avg. Area Number of Bedrooms</label>
+                    <input type="text" id="bedrooms" name="bedrooms" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="population">Area Population</label>
+                    <input type="text" id="population" name="population" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" id="price" name="price" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
