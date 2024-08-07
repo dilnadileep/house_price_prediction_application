@@ -1,18 +1,35 @@
-Steps
-
-1.Creating a Flask Application
-
-    A.Install Python
-
-    B.Install Visual Studio Code
-
-    C.Install Python Extension for VS Code
-
-    D.Create a Project Directory and a virtual environment ,inside this virtual environment install flask.
-    Then create html files inside the folder templates and other depending files like css,js,images are inside static folder.
-
-    E.Create the HTML Template
-    <img width="960" alt="form submission" src="https://github.com/user-attachments/assets/f2b015bc-ab99-4cad-874b-34c00b523b29">
-    
-
+# House Price Prediction System
+## Description
+This web application predicts house prices based on user inputs. It uses three machine learning algorithms—Linear Regression, Random Forest Regressor, and Gradient Boosting Regressor—combined in a stacking model to provide accurate predictions. Users can input details such as average area income, house age, number of rooms, number of bedrooms, and population to get an estimated house price.
+## Installation
+### Prerequisites
+- Python 3.11.5
+- Flask
+- Flask-SQLAlchemy
+- NumPy
+- Joblib
+- Scikit-learn
+- Pandas
+### Installing
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/house-price-prediction.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd project
+    ```
+3. Create virtual environment and activate it:
+    ```sh
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+4. Install dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
+5. Run the Flask application:
+    ```sh
+    flask run
+  
        
