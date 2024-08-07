@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your House Entry</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Avg. Area Income</th>
+                    <th>Avg. Area House Age</th>
+                    <th>Avg. Area Number of Rooms</th>
+                    <th>Avg. Area Number of Bedrooms</th>
+                    <th>Area Population</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ house.id }}</td>
+                    <td>{{ house.income }}</td>
+                    <td>{{ house.age }}</td>
+                    <td>{{ house.rooms }}</td>
+                    <td>{{ house.bedrooms }}</td>
+                    <td>{{ house.population }}</td>
+                    <td>{{ house.address }}</td>
+                </tr>
+            </tbody>
+        </table><br>
+        <!-- Display the predicted price below the table -->
+        <div class="result"><center>
+            <h2>Your predicted price of the house </h2>
+            <p><strong>Predicted Price:</strong> ${{ predicted_price|round(2) }}</p></center>
+        </div>
+    </div>
+</body>
+</html>

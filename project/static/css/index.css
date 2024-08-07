@@ -5,13 +5,20 @@ body {
     padding: 0;
 }
 
+.outer-container {
+    background-color: #d1bdd1; /* Matching background color */
+    padding: 40px 0;
+}
+
 .container {
     display: flex;
-    max-width: 1200px;
+    max-width: 1000px; /* Reduced container width */
     margin: 0 auto;
-    padding: 40px;
-    background-color: #004b63;
+    padding: 20px;
+    background-color: #0a6b8b;
     color: #fff;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .left-column {
@@ -20,7 +27,7 @@ body {
 }
 
 .left-column h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-bottom: 20px;
 }
 
