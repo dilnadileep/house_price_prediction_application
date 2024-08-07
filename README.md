@@ -53,7 +53,7 @@ The core of this application is the machine learning model used for predicting h
   - This ensemble approach leverages the strengths of each base model and reduces the overall prediction error.
 
 ### Model Training
-1. **Dataset**: The model is trained on the `USA_Housing.csv` dataset, which includes features like average area income, house age, number of rooms, number of bedrooms, and population.
+1. **Dataset**: The model is trained on the `USA_Housing.csv` dataset, which includes features like average area income, house age, number of rooms, number of bedrooms, and population.  Dataset Downloaded from [https://www.kaggle.com/datasets/vedavyasv/usa-housing?resource=download]
 2. **Feature Scaling**: The features are standardized using `StandardScaler` to ensure that all features contribute equally to the model's performance.
 3. **Training**: The stacking model is trained on the scaled training data and evaluated on the test data.
 4. **Performance Metrics**: The model's performance is assessed using Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² Score.
