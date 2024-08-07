@@ -8,7 +8,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
 
 # Load and prepare the dataset
-df = pd.read_csv('C:/Users/dilna/Downloads/USA_Housing.csv')
+df = pd.read_csv('C:/Users/dilna/OneDrive/Desktop/Flask_project/USA_Housing.csv')
 X = df[['Avg. Area Income', 'Avg. Area House Age', 'Avg. Area Number of Rooms', 'Avg. Area Number of Bedrooms', 'Area Population']]
 y = df['Price']
 
@@ -41,7 +41,7 @@ joblib.dump(scaler, 'scaler.pkl')
 # Predict on test set
 y_pred = stacking_model.predict(X_test_scaled)
 
-# Calculate performance metrics
+# Calculate performance metrics for ensure the model quality .
 mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 rmse = mse ** 0.5

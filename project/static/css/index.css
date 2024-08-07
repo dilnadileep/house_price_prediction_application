@@ -14,8 +14,8 @@ body {
     display: flex;
     max-width: 1000px; /* Reduced container width */
     margin: 0 auto;
-    padding: 20px;
-    background-color: #0a6b8b;
+    padding: 30px;
+    background-color: #0a4f50;
     color: #fff;
     border-radius: 10px; /* Rounded corners for a modern look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -23,17 +23,29 @@ body {
 
 .left-column {
     flex: 1;
-    padding-right: 40px;
+    padding-right: 20px;
 }
 
 .left-column h1 {
-    font-size: 2.2em;
+    font-size: 2.2em; /* Adjust font size */
     margin-bottom: 20px;
+    text-align: center; /* Center align heading */
+    font-weight: bold; /* Bold heading */
+    text-transform: uppercase; /* Capitalize letters */
+    color: #f1faee; /* Set a light color for the heading */
+    letter-spacing: 2px; /* Add space between letters */
 }
 
 .left-column p {
-    font-size: 1.2em;
-    line-height: 1.5;
+    
+    font-size: 1.2em; /* Adjust font size */
+    line-height: 1.5; /* Adjust line height */
+    margin-bottom: 20px; /* Add margin bottom */
+    text-align: justify; /* Justify text */
+    color: #f1faee; /* Set a light color for the paragraph */
+    padding: 10px 0; /* Add padding for spacing */
+    border-left: 4px solid #f1faee; /* Add a left border */
+    padding-left: 15px; /* Add padding to left */
 }
 
 .right-column {
