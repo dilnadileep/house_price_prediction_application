@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import numpy as np
 import joblib
-model = joblib.load('house_price_model_rf.pkl')
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///houses.db'
@@ -16,6 +15,10 @@ class House(db.Model):
     bedrooms = db.Column(db.Float, nullable=False)
     population = db.Column(db.Float, nullable=False)
     address = db.Column(db.String(200), nullable=False)
+
+# Load the model and scaler
+model = joblib.load('stacking_house_price_model.pkl')
+scaler = joblib.load('scaler.pkl')
 
 @app.route('/')
 def index():
@@ -32,9 +35,10 @@ def submit():
             population = float(request.form['population'])
             address = request.form['address']
 
-            # Predict the house price using the new model
-            features = [[income, age, rooms, bedrooms, population]]
-            predicted_price = model.predict(features)[0]
+            # Prepare the features for prediction
+            features = np.array([[income, age, rooms, bedrooms, population]])
+            features_scaled = scaler.transform(features)  # Apply scaling
+            predicted_price = model.predict(features_scaled)[0]
 
             new_house = House(
                 income=income,
@@ -58,7 +62,6 @@ def submit():
 
 @app.route('/house_details')
 def house_details():
-    # Retrieve the latest entry added
     last_house = House.query.order_by(House.id.desc()).first()
     return render_template('house_details.html', house=last_house)
 
